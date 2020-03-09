@@ -19,6 +19,16 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
+    
+    - name: Cloud Run with docker build and push to GCR
+      uses: passionkind/action-cloud-run@1.5
+      with:
+        working_directory: .
+        service_name: hellloworld
+        gcp_service_key: ${{ secrets.GCLOUD_AUTH }}
+        project: cloudrun-sample1
+        registry: gcr.io
+        region: us-west1
 
     - name: Cloud Run
       uses: stefda/action-cloud-run@v1.0
