@@ -23,13 +23,13 @@ jobs:
     - name: Cloud Run
       uses: stefda/action-cloud-run@v1.0
       with:
-      # Name of the docker image
-      image: gcr.io/cloudrun-sample1/helloworld
-      # Name of the service in Cloud Run
-      service: hellloworld
-      # GCP project
-      project: cloudrun-sample1
-      # GCP region
-      region: us-west1
-      # GCP service key with storage and run permissions
-      service key: ${{ secrets.GCLOUD_AUTH }}
+        # Name of the docker image
+        image: gcr.io/cloudrun-sample1/helloworld
+        # Name of the service in Cloud Run
+        service: hellloworld
+        # GCP project
+        project: cloudrun-sample1
+        # GCP region
+        region: us-west1
+        # GCP service key with storage and run permissions
+        service key: ${{ secrets.GCLOUD_AUTH }}
