@@ -32,4 +32,4 @@ jobs:
       # GCP region
       region: us-west1
       # GCP service key with storage and run permissions
-      service key: 
+      service key: ${{ secrets.GCLOUD_AUTH }}
