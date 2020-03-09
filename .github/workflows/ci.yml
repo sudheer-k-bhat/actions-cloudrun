@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    - name: Cloud Run
+      uses: stefda/action-cloud-run@v1.0
+      with:
+      # Name of the docker image
+      image: gcr.io/cloudrun-sample1/helloworld
+      # Name of the service in Cloud Run
+      service: hellloworld
+      # GCP project
+      project: cloudrun-sample1
+      # GCP region
+      region: us-west1
+      # GCP service key with storage and run permissions
+      service key: 
